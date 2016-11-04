@@ -12,6 +12,13 @@
 ## geo_limits:  list of cities defining the observation area
 load_data <- function(date_start, date_end, geo_limits) {
     
+    # Check for installed packages
+    list.of.packages <- c("lubridate", "RCurl", "ggmap", "dplyr", "rworldmap")
+    new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+    if (length(new.packages)) {
+        install.packages(new.packages)
+    }
+    
     library(lubridate)
     library(RCurl)
     library(ggmap)
