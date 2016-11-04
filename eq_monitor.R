@@ -71,7 +71,7 @@ plot_eq <- function(date_start, date_end, geo_limits) {
     eq_filtered <- load_data(date_start, date_end, geo_limits)
     
     # Chart creation
-    pdf("earthquakes_outputs/earthquake_chart.pdf", paper = "USr");
+    pdf("earthquakes_outputs/earthquake_chart.pdf", paper = "USr", width = 50, height = 30);
     
         plot(eq_filtered$Time,
              eq_filtered$Magnitude,
