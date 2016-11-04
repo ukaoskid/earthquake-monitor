@@ -1,4 +1,4 @@
-## Available data frames after script execution
+## WEM World Earthquake Monitor
 ##
 ## Author:          Simone Di Cicco (simone.dicicco@gmail.com)
 ## Datasource:      INGV - Italian national institute for geophysics and volcanology (www.ingv.it)
