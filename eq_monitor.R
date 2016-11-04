@@ -24,22 +24,22 @@ load_data <- function(date_start, date_end, geo_limits) {
     library(ggmap)
     source("eq_process_ds.R")
     
-    print("Getting data...")
-    eq_URL_1 <- "http://webservices.ingv.it/fdsnws/event/1/query?starttime="
-    eq_URL_2 <- "T00%3A00%3A00&endtime="
-    eq_URL_3 <- "T23%3A59%3A59&minmag=2&maxmag=10&mindepth=0&maxdepth=1000&minlat=35&"
-    eq_URL_4 <- "maxlat=49&minlon=5&maxlon=20&minversion=100&orderby=time-asc&format=text&limit=4000"
-    eq_URL <- paste(eq_URL_1, date_start, eq_URL_2, date_end, eq_URL_3, eq_URL_4, sep = "")
-    
-    eq_stream <- getURL(eq_URL)
-    eq <- read.csv(textConnection(eq_stream), sep = "|")
-    eq$Time <- ymd_hms(eq$Time)
-    
     geo_limits <- geocode(geo_limits)
     eq_min_lat <- min(geo_limits[["lat"]])
     eq_max_lat <- max(geo_limits[["lat"]])
     eq_min_lon <- min(geo_limits[["lon"]])
     eq_max_lon <- max(geo_limits[["lon"]])
+    
+    print("Getting data...")
+    eq_URL_1 <- "http://webservices.ingv.it/fdsnws/event/1/query?starttime="
+    eq_URL_2 <- "T00%3A00%3A00&endtime="
+    eq_URL_3 <- "T23%3A59%3A59&minmag=2&maxmag=10&mindepth=0&maxdepth=1000&"
+    eq_URL_4 <- "minlat=-90&maxlat=90&minlon=-180&maxlon=180&minversion=100&orderby=time-asc&format=text&limit=10000"
+    eq_URL <- paste(eq_URL_1, date_start, eq_URL_2, date_end, eq_URL_3, eq_URL_4, sep = "")
+    
+    eq_stream <- getURL(eq_URL)
+    eq <- read.csv(textConnection(eq_stream), sep = "|")
+    eq$Time <- ymd_hms(eq$Time)
     
     # Filtering the dataset
     eq_filtered <<- subset(
