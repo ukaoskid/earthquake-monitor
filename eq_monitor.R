@@ -1,6 +1,8 @@
 ## Available data frames after script execution
 ##
-## eq_filtered:     INVG filtered dataset
+## Author:          Simone Di Cicco (simone.dicicco@gmail.com)
+## Datasource:      INGV - Italian national institute for geophysics and volcanology (www.ingv.it)
+## eq_filtered:     INGV filtered dataset
 ## eq_dataset_01:   first processed dataset
 
 ## Load earthquake data from INGV track
