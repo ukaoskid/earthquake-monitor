@@ -22,6 +22,6 @@ R is needed to run this application. If you don't have R installed you should do
 - Open R console
 - Load the main R file `source("eq_monitor.R")`
 - Run one of the two functions
-  1. `plot_eq(date_start, date_end, geo_limits)`
-  2. `plot_eq_map(date_start, date_end, geo_limits)`
+  1. `plot_eq(date_start, date_end, geo_limits)` Date formats `YYYY-MM-DD`
+  2. `plot_eq_map(date_start, date_end, geo_limits)` Date formats `YYYY-MM-DD`
 - The application may ask you to install R packages
