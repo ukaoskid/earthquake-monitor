@@ -1,9 +1,9 @@
 ## WEM World Earthquake Monitor
 ##
-## Author:          Simone Di Cicco (simone.dicicco@gmail.com)
-## Datasource:      INGV - Italian national institute for geophysics and volcanology (www.ingv.it)
-## eq_dataset_filtered:     INGV filtered dataset
-## eq_dataset_01:   first processed dataset
+## Author:              Simone Di Cicco (simone.dicicco@gmail.com)
+## Datasource:          INGV - Italian national institute for geophysics and volcanology (www.ingv.it)
+## eq_dataset_filtered: INGV filtered dataset
+## eq_dataset_01:       first processed dataset
 
 ## Load earthquake data from INGV track
 ##
