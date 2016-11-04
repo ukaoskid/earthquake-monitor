@@ -96,13 +96,13 @@ plot_eq_map <- function(date_start, date_end, geo_limits) {
     
     library(rworldmap)
     
-    eq_filtered <- load_data(date_start, date_end)
+    eq_filtered <- load_data(date_start, date_end, geo_limits)
     
-    italy_map <- getMap(resolution = "low")
-    italy_limits <- geocode(geo_limits)
-    plot(italy_map,
-         xlim = range(italy_limits$lon),
-         ylim = range(italy_limits$lat),
+    world_map <- getMap(resolution = "low")
+    requested_limits <- geocode(geo_limits)
+    plot(world_map,
+         xlim = range(requested_limits$lon),
+         ylim = range(requested_limits$lat),
          asp = 1,
          main = paste(date_start, date_end, sep = " / ")
     )
