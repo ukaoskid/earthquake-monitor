@@ -24,6 +24,8 @@ load_data <- function(date_start, date_end, geo_limits) {
     library(ggmap)
     source("eq_process_ds.R")
     
+    dir.create("earthquakes_outputs/")
+    
     geo_limits <- geocode(geo_limits)
     eq_min_lat <- min(geo_limits[["lat"]])
     eq_max_lat <- max(geo_limits[["lat"]])
@@ -64,14 +66,11 @@ load_data <- function(date_start, date_end, geo_limits) {
 plot_eq <- function(date_start, date_end, geo_limits) {
     
     library(dplyr)
-    
-    output_dest <- "earthquakes_outputs/"
-    dir.create(output_dest)
-    
+
     eq_filtered <- load_data(date_start, date_end, geo_limits)
     
     # Chart creation
-    pdf("earthquakes_outputs/earthquake_chart.pdf", paper = "USr", width = 50, height = 30);
+    pdf("earthquakes_outputs/earthquake_chart.pdf", paper = "USr", width = 80, height = 50);
     
         plot(eq_filtered$Time,
              eq_filtered$Magnitude,
