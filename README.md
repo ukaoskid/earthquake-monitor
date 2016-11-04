@@ -28,3 +28,5 @@ R is needed to run this application. If you don't have R installed you should do
 
 #### Example
 `plot_eq("2016-10-24", "2016-11-04", c("Firenze", "Sulmona"))`
+
+`plot_eq_map("2016-08-01", "2016-11-04", c("Anchorage, AK", "Melbourne, AU"))`
