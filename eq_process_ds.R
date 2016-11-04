@@ -1,7 +1,7 @@
 process_dataset <- function(filtered_ds) {
     
-    eq_dataset_01 <<- eq_filtered %>%
-        group_by(time = format(eq_filtered$Time, "%Y-%m-%d")) %>%
+    eq_dataset_01 <<- eq_dataset_filtered %>%
+        group_by(time = format(eq_dataset_filtered$Time, "%Y-%m-%d")) %>%
         summarize(
             shake_mean = round(mean(Magnitude), 1),
             max_magnitude = max(Magnitude),
