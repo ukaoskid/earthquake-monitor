@@ -25,3 +25,6 @@ R is needed to run this application. If you don't have R installed you should do
   1. `plot_eq(date_start, date_end, geo_limits)` Date formats `YYYY-MM-DD`
   2. `plot_eq_map(date_start, date_end, geo_limits)` Date formats `YYYY-MM-DD`
 - The application may ask you to install R packages
+
+#### Example
+`plot_eq("2016-10-24", "2016-11-04", c("Firenze", "Sulmona"))`
