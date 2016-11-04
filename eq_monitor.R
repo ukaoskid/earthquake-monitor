@@ -62,7 +62,7 @@ plot_eq <- function(date_start, date_end, geo_limits) {
     eq_filtered <- load_data(date_start, date_end, geo_limits)
     
     # Chart creation
-    png("earthquakes_outputs/plot.pdf");
+    pdf("earthquakes_outputs/earthquake_chart.pdf", paper = "USr");
     
         plot(eq_filtered$Time,
              eq_filtered$Magnitude,
@@ -79,7 +79,7 @@ plot_eq <- function(date_start, date_end, geo_limits) {
         )
         abline(lm(eq_filtered$Magnitude ~ eq_filtered$Time), col = "red")
 
-    dev.off();
+    dev.off()
     
     # Dataset processing
     process_dataset(eq_filtered)
@@ -100,11 +100,16 @@ plot_eq_map <- function(date_start, date_end, geo_limits) {
     
     world_map <- getMap(resolution = "low")
     requested_limits <- geocode(geo_limits)
-    plot(world_map,
-         xlim = range(requested_limits$lon),
-         ylim = range(requested_limits$lat),
-         asp = 1,
-         main = paste(date_start, date_end, sep = " / ")
-    )
-    points(eq_filtered$Longitude, eq_filtered$Latitude, col = "red", cex = .4)
+    
+    pdf("earthquakes_outputs/earthquake_geomap.pdf");
+    
+        plot(world_map,
+             xlim = range(requested_limits$lon),
+             ylim = range(requested_limits$lat),
+             asp = 1,
+             main = paste(date_start, date_end, sep = " / ")
+        )
+        points(eq_filtered$Longitude, eq_filtered$Latitude, col = "red", cex = .4)
+    
+    dev.off()
 }
