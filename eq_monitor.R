@@ -70,7 +70,7 @@ plot_eq <- function(date_start, date_end, geo_limits) {
     eq_filtered <- load_data(date_start, date_end, geo_limits)
     
     # Chart creation
-    pdf("earthquakes_outputs/earthquake_chart.pdf", paper = "USr", width = 80, height = 50);
+    pdf("earthquakes_outputs/earthquake_chart.pdf", paper = "USr", width = 80, height = 50)
     
         plot(eq_filtered$Time,
              eq_filtered$Magnitude,
@@ -109,7 +109,7 @@ plot_eq_map <- function(date_start, date_end, geo_limits) {
     world_map <- getMap(resolution = "low")
     requested_limits <- geocode(geo_limits)
     
-    pdf("earthquakes_outputs/earthquake_geomap.pdf");
+    pdf("earthquakes_outputs/earthquake_geomap.pdf", paper = "USr", width = 80, height = 50)
     
         plot(world_map,
              xlim = range(requested_limits$lon),
