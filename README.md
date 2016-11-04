@@ -24,3 +24,4 @@ R is needed to run this application. If you don't have R installed you should do
 - Run one of the two functions
   1. ```plot_eq(date_start, date_end, geo_limits)```
   2. ```plot_eq_map(date_start, date_end, geo_limits)```
+- The application may ask you to install R packages
